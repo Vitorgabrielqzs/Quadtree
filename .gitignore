@@ -1,0 +1,7 @@
+# Pasta do TCC (não vai para o GitHub)
+tcc/
+
+# Arquivos gerados pelo .NET (compilação)
+bin/
+obj/
+.vs/
