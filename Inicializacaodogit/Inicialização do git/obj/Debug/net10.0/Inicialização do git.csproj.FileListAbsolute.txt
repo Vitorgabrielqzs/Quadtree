@@ -1,0 +1,15 @@
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\bin\Debug\net10.0\Inicialização do git.exe
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\bin\Debug\net10.0\Inicialização do git.deps.json
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\bin\Debug\net10.0\Inicialização do git.runtimeconfig.json
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\bin\Debug\net10.0\Inicialização do git.dll
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\bin\Debug\net10.0\Inicialização do git.pdb
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\Inicialização do git.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\Inicialização do git.AssemblyInfoInputs.cache
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\Inicialização do git.AssemblyInfo.cs
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\Inicialização do git.csproj.CoreCompileInputs.cache
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\Inicialização do git.dll
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\refint\Inicialização do git.dll
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\Inicialização do git.pdb
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\Inicialização do git.genruntimeconfig.cache
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\ref\Inicialização do git.dll
+C:\Users\vitor\Desktop\sla\Inicialização do git\Inicialização do git\obj\Debug\net10.0\Iniciali.B23CF00B.Up2Date
