@@ -16,14 +16,15 @@ O Quadtree é o app do TCC do Vitor e do Sidney (Técnico em Desenvolvimento de 
    - **depende de:** tarefa anterior ainda aberta, se houver (inclusive do outro membro). Se depender, diga o que precisa ficar pronto antes;
    - **o que você vai precisar saber**, em 2 ou 3 linhas (o resto vem quando ele começar);
    - pergunte se quer começar por ela ou fazer outra.
-4. Se não houver tarefa aberta para essa pessoa na etapa atual, mostre a próxima dela na etapa seguinte e avise quais tarefas do outro ainda seguram a etapa atual.
+4. **Crie o doc da tarefa atual no Claude Docs** (seção 1.7) e entregue o link. Daí em diante, ele é o painel da pessoa durante a sessão.
+5. Se não houver tarefa aberta para essa pessoa na etapa atual, mostre a próxima dela na etapa seguinte e avise quais tarefas do outro ainda seguram a etapa atual.
 
 ### Estado atual (atualize sempre que algo mudar)
 
 - **Última atualização:** 22/11/2026.
 - **Etapa em andamento:** Etapa 1 (Preparação).
-- **Feito:** Vitor instalou o Visual Studio 2026; capítulo 1 do TCC escrito; requisitos levantados; roadmap pronto no Notion; repositório clonado na branch `main`.
-- **Repositório hoje:** só tem `.gitignore`, este `CLAUDE.md` e a pasta `Inicializacaodogit` (teste do Git, para apagar). **Nenhuma linha do app foi escrita ainda.**
+- **Feito:** Vitor instalou o Visual Studio 2026; capítulo 1 do TCC escrito; requisitos levantados; roadmap pronto no Notion; repositório clonado na branch `main`; .NET 10 conferido; pasta Inicializacaodogit apagada; .gitignore revisado (tcc/ fora do git).
+- **Repositório hoje:** `.gitignore`, este `CLAUDE.md` e a pasta `fontes/` (Inter Tight e Nunito Sans, as fontes do app). **Nenhuma linha do app foi escrita ainda.**
 
 ---
 
@@ -72,10 +73,13 @@ O Quadtree é o app do TCC do Vitor e do Sidney (Técnico em Desenvolvimento de 
 ### 1.5 Lista de tarefas (o que já foi feito e o que falta)
 
 - A **seção 7** é a lista oficial: `[x]` = feito, `[ ]` = falta. A primeira etapa com caixinhas `[ ]` é a etapa atual.
-- Quando alguém disser que terminou uma tarefa (ou o código mostrar que ela está pronta e testada):
-  1. troque `[ ]` por `[x]` na seção 7;
+- **Salvar o progresso só quando o Vitor mandar** ("salvar" ou "finalizar a sessão"). Até lá, **não edite este arquivo** para marcar tarefas nem para atualizar o "Estado atual"; apenas acompanhe o que foi feito durante a conversa.
+- Quando ele disser **"salvar"** ou **"finalizar a sessão"**:
+  1. leia o doc da tarefa atual (seção 1.7) e troque `[ ]` por `[x]` na seção 7 nas tarefas que ele riscou (ou que ele disse que concluiu), só se funcionam e foram testadas;
   2. atualize o "Estado atual" (seção 0);
-  3. lembre de marcar a mesma caixinha na página Roadmap do Notion (ou marque, se o Notion estiver conectado e pedirem).
+  3. registre na seção 10 as decisões novas;
+  4. **lembre-o de mandar para o GitHub** (commit, push e pull request, na branch dele; o `CLAUDE.md` é versionado e só vale para o outro membro depois de ir para a `main`);
+  5. lembre de marcar as mesmas caixinhas na página Roadmap do Notion (ou marque, se o Notion estiver conectado e ele pedir).
 - Só marque `[x]` o que **funciona e foi testado**. Pela metade continua `[ ]`; se quiser, acrescente "— em andamento" no fim da linha.
 - Tarefa nova, removida ou que muda de dono: só quando o Vitor decidir. Ajuste a lista e registre na seção 10.
 - Os dois mexem neste arquivo, cada um na própria branch. Num conflito ao juntar na `main`, **mantenha as caixinhas marcadas pelos dois**.
@@ -86,6 +90,21 @@ O Quadtree é o app do TCC do Vitor e do Sidney (Técnico em Desenvolvimento de 
 - Na Base de dados de construção, **você só guia**: não escreva os detalhes das tarefas (eles escrevem) e **não mude nem sugira mudar a estrutura da base**.
 - Quando o Vitor pedir algo no Notion, faça de uma vez, sem pedir confirmação.
 - Nas páginas: sem fundo amarelo ou dourado (use verde) e sem roxo.
+
+### 1.7 Doc da tarefa atual (Claude Docs)
+
+- Sempre que a pessoa começar uma tarefa, um bloco de tarefas ou uma etapa nova, **crie um doc no Claude Docs** com a tarefa completa atual. É o painel dela: assim ela não precisa de prompts só para lembrar o que está fazendo.
+- **Título:** "Quadtree — Tarefa atual: Etapa N (Nome da etapa) — Vitor" (ou Sidney).
+- **Estrutura do doc, nesta ordem:**
+  1. **Lista de tarefas** com caixinhas (`- [ ]`) para a pessoa riscar ao concluir, em grupos (já feitas, depois os grupos da etapa, como "Repositório" e "Decisões e TCC"). Só as tarefas **dela**.
+  2. **Pronto quando:** o critério de fechamento da etapa.
+  3. **Falta do outro membro:** o que ainda segura o fim da etapa.
+  4. Uma linha horizontal (`---`).
+  5. **Contextualização:** uma seção (título de nível 3) por tarefa, curta e didática: o que é, para que serve no Quadtree, o comando ou conceito principal e os cuidados. Se houver decisão pendente, diga qual e dê a sua opinião.
+- **Durante a mesma etapa, atualize o doc existente**; só crie outro quando mudar de etapa ou de bloco.
+- A pessoa risca as caixinhas no doc. **Quando ela disser "salvar" ou "finalizar a sessão"**, leia o doc, veja o que está riscado e passe isso para as caixinhas da seção 7 (regra da seção 1.5).
+- O doc é rascunho de trabalho e não substitui a seção 7, que continua sendo a lista oficial.
+- Este doc é montado e revisado no Claude Docs; só converter para `.docx` se a pessoa pedir.
 
 ---
 
@@ -139,6 +158,7 @@ quadtree/
 | Regras do Git | Notion → quadtree → **regras do github** |
 | Estudos de C# do Vitor | Notion → quadtree → **C#** (cobre do básico até POO, interfaces, enums, arquivos e exceções; WPF e MVVM ainda não) |
 | Rascunhos de documentos | Claude Docs |
+| Doc da tarefa atual (lista para riscar + contexto) | Claude Docs (seção 1.7) |
 
 ---
 
@@ -259,26 +279,26 @@ Cada cor tem o **papel** (fundo) e a **tinta** (detalhes, texto solto, rodapé).
 
 ### 5.3 Fontes
 
-- **Inter** (interface): pesos 400, 500, 600, 700, 800. **Nunito** (conteúdo do quadro): 700, 800, 900. Gratuitas (licença OFL), embutidas no app.
-- **Caligrafias** (título, texto solto, formas e tabelas): Inter + Caveat, Patrick Hand, Permanent Marker, Amatic SC, Dancing Script, Pacifico, Lobster, Bebas Neue, Abril Fatface, Playfair Display, DM Serif Display, Fredoka e Space Mono (14 no total, do Google Fonts, embutidas). No menu, cada nome aparece na própria letra; passar o mouse já mostra o item com ela; fechar sem escolher volta à anterior.
+- **Inter Tight** (interface): pesos 400, 500, 600, 700, 800. **Nunito Sans** (conteúdo do quadro): 700, 800, 900. Gratuitas (licença OFL), embutidas no app. Decisão de 22/11/2026: no lugar de Inter e Nunito, valem **Inter Tight** e **Nunito Sans** (nomes de família no XAML: `Inter Tight` e `Nunito Sans`). Os arquivos são variáveis; conferir na Etapa 4 se os pesos 800 e 900 saem certos, e se o espaçamento de −0,04em do título não fica apertado demais na Inter Tight (ela já é mais apertada).
+- **Caligrafias** (título, texto solto, formas e tabelas): Inter Tight + Caveat, Patrick Hand, Permanent Marker, Amatic SC, Dancing Script, Pacifico, Lobster, Bebas Neue, Abril Fatface, Playfair Display, DM Serif Display, Fredoka e Space Mono (14 no total, do Google Fonts, embutidas). No menu, cada nome aparece na própria letra; passar o mouse já mostra o item com ela; fechar sem escolher volta à anterior.
 
 | Elemento | Fonte | Tamanho | Peso | Detalhes |
 |---|---|---|---|---|
-| Título grande do quadro | Inter | 42 | 800 | espaçamento −0,04em |
-| Subtítulo do quadro | Inter | 15 | 500 | `Ink2`, "Editado agora" (sem contagem de itens) |
-| Linha da lateral | Inter | 15 | 500 | |
-| Rótulo de seção da lateral | Inter | 12,5 | 600 | `Ink3` |
-| Linhas do menu | Inter | 15 | 500 | cabeçalho 12,5 / 600 / `Ink3` |
-| Status, dica, balões | Inter | 13 | 500–600 | `Ink2` |
-| Texto do post-it | Nunito | 19 | 900 | MAIÚSCULAS, entrelinha 1,26, cor `#1C1812` a 88% |
-| Rodapé do post-it | Nunito | 10 | 800 | espaçamento 0,12em, tinta a 85% |
-| Título do pautado | Nunito | 13 | 900 | MAIÚSCULAS, cor da tinta |
-| Itens do pautado | Nunito | 15 | 700 | entrelinha 27 |
-| Título da nota | Nunito | 18 | 900 | entrelinha 22 |
-| Corpo da nota | Nunito | 14 | 700 | entrelinha 28, cor `#33374A` |
-| Título do bloco | Inter | 16,5 | 700 | espaçamento −0,02em |
-| Corpo do bloco | Inter | 14 | 400 | entrelinha 1,7 |
-| Texto solto | Nunito | 50 | 900 | cor da tinta |
+| Título grande do quadro | Inter Tight | 42 | 800 | espaçamento −0,04em |
+| Subtítulo do quadro | Inter Tight | 15 | 500 | `Ink2`, "Editado agora" (sem contagem de itens) |
+| Linha da lateral | Inter Tight | 15 | 500 | |
+| Rótulo de seção da lateral | Inter Tight | 12,5 | 600 | `Ink3` |
+| Linhas do menu | Inter Tight | 15 | 500 | cabeçalho 12,5 / 600 / `Ink3` |
+| Status, dica, balões | Inter Tight | 13 | 500–600 | `Ink2` |
+| Texto do post-it | Nunito Sans | 19 | 900 | MAIÚSCULAS, entrelinha 1,26, cor `#1C1812` a 88% |
+| Rodapé do post-it | Nunito Sans | 10 | 800 | espaçamento 0,12em, tinta a 85% |
+| Título do pautado | Nunito Sans | 13 | 900 | MAIÚSCULAS, cor da tinta |
+| Itens do pautado | Nunito Sans | 15 | 700 | entrelinha 27 |
+| Título da nota | Nunito Sans | 18 | 900 | entrelinha 22 |
+| Corpo da nota | Nunito Sans | 14 | 700 | entrelinha 28, cor `#33374A` |
+| Título do bloco | Inter Tight | 16,5 | 700 | espaçamento −0,02em |
+| Corpo do bloco | Inter Tight | 14 | 400 | entrelinha 1,7 |
+| Texto solto | Nunito Sans | 50 | 900 | cor da tinta |
 | Título (item) | conforme a caligrafia | 64 | — | tamanho escolhido de 8 a 400 px |
 
 ### 5.4 Formas, espaços e movimento
@@ -383,10 +403,10 @@ Lateral, cápsulas da barra de cima, bandeja, menus, status e balões são **pai
 
 | Item | Etapa | Como é |
 |---|---|---|
-| **Nota** | 5 | Folha branca lisa (sem pautas, margem, furos ou orelha), 236 de largura e 300 de altura mínima. Título Nunito 18/900 e corpo Nunito 14/700. Nasce já escrevendo o título. O texto fica num arquivo `.md` (Etapa 6); mudar o título renomeia o arquivo. **Espiral** de caderno opcional (botão direito → "Pôr a espiral"/"Tirar a espiral"; Categoria 3). |
-| **Bloco** | 5 | Cartão de vidro com **cor forte (75% da cor)** e **texto preto `#000`**, raio 24, 290 de largura. Título Inter 16,5/700 (vazio mostra "Título" clarinho) e parágrafo Inter 14. Sem bolinha antes do título. |
-| **Post-it** | 9 (visual completo na 15) | 172×172, papel liso na cor. Texto Nunito 19/900 em MAIÚSCULAS, centralizado. Estilos: **alfinete** (bolinha de 20 px no topo), **fita** (86×27, listras diagonais, pontas em zigue-zague), **solto** e **pautado** (linhas na cor da tinta a 28%, a cada 27 px a partir de 34; título + lista à esquerda). Visual completo: faixa adesiva nos 26 px de cima, canto levantado (triângulo de 36 px), sombra dupla nos cantos de baixo, rodapé com a data ("28 OUT") e o número ("#01": posição entre os post-its deste quadro). Novo post-it usa a última cor e estilo. |
-| **Texto solto** | 9 | Só o texto, Nunito 50/900 na cor da tinta. As alças mudam o tamanho da letra. Edição numa linha. |
+| **Nota** | 5 | Folha branca lisa (sem pautas, margem, furos ou orelha), 236 de largura e 300 de altura mínima. Título Nunito Sans 18/900 e corpo Nunito Sans 14/700. Nasce já escrevendo o título. O texto fica num arquivo `.md` (Etapa 6); mudar o título renomeia o arquivo. **Espiral** de caderno opcional (botão direito → "Pôr a espiral"/"Tirar a espiral"; Categoria 3). |
+| **Bloco** | 5 | Cartão de vidro com **cor forte (75% da cor)** e **texto preto `#000`**, raio 24, 290 de largura. Título Inter Tight 16,5/700 (vazio mostra "Título" clarinho) e parágrafo Inter Tight 14. Sem bolinha antes do título. |
+| **Post-it** | 9 (visual completo na 15) | 172×172, papel liso na cor. Texto Nunito Sans 19/900 em MAIÚSCULAS, centralizado. Estilos: **alfinete** (bolinha de 20 px no topo), **fita** (86×27, listras diagonais, pontas em zigue-zague), **solto** e **pautado** (linhas na cor da tinta a 28%, a cada 27 px a partir de 34; título + lista à esquerda). Visual completo: faixa adesiva nos 26 px de cima, canto levantado (triângulo de 36 px), sombra dupla nos cantos de baixo, rodapé com a data ("28 OUT") e o número ("#01": posição entre os post-its deste quadro). Novo post-it usa a última cor e estilo. |
+| **Texto solto** | 9 | Só o texto, Nunito Sans 50/900 na cor da tinta. As alças mudam o tamanho da letra. Edição numa linha. |
 | **Título** | 9 | Texto solto de 64 px que já nasce escrevendo. Botão direito → "Tamanho em pixels" (8 a 400, muda ao digitar) e "Caligrafia". |
 | **Caixa de texto** | 9 | Cartão de raio 10, borda de 2 px na cor (cinza `CardBorder` quando branco), fundo `CardBg` com 10% da cor. |
 | **Forma** | 9 | Escolhida numa biblioteca com busca e 5 categorias (abaixo). Desenhada numa grade 100×100 e esticada para o tamanho do item. Aceita texto dentro. Barra "Transparência do fundo" de 0 a 100% (Categoria 3). |
@@ -549,16 +569,16 @@ Ordem do mais simples (fazer o código rodar) até o polimento. Cada etapa tem a
 *Ambiente*
 - [x] Instalar o Visual Studio 2026 com a carga de desktop .NET (Vitor)
 - [ ] Instalar o Visual Studio 2026 com a carga de desktop .NET (Sidney)
-- [ ] Conferir o .NET 10 instalado (Vitor)
+- [x] Conferir o .NET 10 instalado (Vitor)
 - [ ] Conferir o .NET 10 instalado (Sidney)
 - [ ] Instalar e configurar o Git (Vitor)
 - [ ] Instalar e configurar o Git (Sidney)
 - [ ] Clonar o repositório Quadtree (Sidney)
-- [ ] Baixar as fontes Inter e Nunito (Vitor)
+- [x] Baixar as fontes Inter Tight e Nunito Sans (Vitor) — estão na pasta `fontes/` do repositório (Sidney pode usar)
 
 *Repositório*
-- [ ] Apagar a pasta Inicializacaodogit (Vitor)
-- [ ] Revisar o .gitignore (Vitor)
+- [x] Apagar a pasta Inicializacaodogit (Vitor)
+- [x] Revisar o .gitignore (Vitor)
 - [x] Decidir o nome da branch principal (Vitor) — é a `main`
 - [ ] Criar a branch do Vitor (Vitor)
 - [ ] Criar a branch do Sidney (Sidney)
@@ -667,16 +687,16 @@ Ao guiar os estudos: diga o que estudar, para que serve no Quadtree e o que faze
 - [ ] Instalar o CommunityToolkit.Mvvm (Vitor)
 - [ ] Criar o MainViewModel e ligar à janela (Vitor)
 - [ ] Criar o Themes/Light.xaml com as cores (Sidney)
-- [ ] Embutir as fontes Inter e Nunito (Sidney)
+- [ ] Embutir as fontes Inter Tight e Nunito Sans (Sidney)
 - [ ] Escrever os padrões de nomes e commits no README (Vitor)
 
 **O que precisa saber**
 - No `.csproj`: `OutputType` WinExe, `TargetFramework`, `UseWPF`, `Nullable`, `PackageReference` do CommunityToolkit.Mvvm.
 - `DataContext`: o objeto de onde a tela tira os dados do binding.
 - `ResourceDictionary` mesclado no `App.xaml` (`MergedDictionaries`); cores como `SolidColorBrush` com `x:Key`, usando os tokens da seção 5.1 (por enquanto só o claro). Usar `DynamicResource` nas telas, para o tema escuro funcionar depois.
-- Fontes embutidas: `.ttf` com Build Action **Resource** e `FontFamily="pack://application:,,,/Assets/Fonts/#Inter"`.
+- Fontes embutidas: `.ttf` com Build Action **Resource** e `FontFamily="pack://application:,,,/Assets/Fonts/#Inter Tight"`.
 
-**Pronto quando:** F5 abre a janela nos dois PCs e um texto aparece por binding, em Inter.
+**Pronto quando:** F5 abre a janela nos dois PCs e um texto aparece por binding, em Inter Tight.
 
 ---
 
@@ -1233,6 +1253,9 @@ Ao guiar os estudos: diga o que estudar, para que serve no Quadtree e o que faze
 | 22/11/2026 | Este CLAUDE.md vai para o GitHub, tem a lista de tarefas e toda a especificação do app; não faz referência a nenhum outro projeto. |
 | 22/11/2026 | No começo de toda sessão, o Claude pergunta se é o Vitor ou o Sidney e mostra a próxima tarefa daquela pessoa. |
 | 22/11/2026 | Dois cliques na nota editam no quadro; o editor de notas ao lado abre pelo botão direito → "Abrir no editor". |
+| 22/11/2026 | Fontes do app: **Inter Tight** (interface) e **Nunito Sans** (conteúdo do quadro), no lugar de Inter e Nunito. Pasta `fontes/` no GitHub. |
+| 22/11/2026 | O Claude só atualiza o `CLAUDE.md` (tarefas, estado, decisões) quando o Vitor disser "salvar" ou "finalizar a sessão", e então lembra de mandar para o GitHub. |
+| 22/11/2026 | Em cada tarefa, bloco ou etapa, o Claude cria um doc no Claude Docs com a lista de tarefas para o Vitor riscar e a contextualização embaixo (seção 1.7); no "salvar", o Claude lê o doc para atualizar as caixinhas. |
 
 ---
 
