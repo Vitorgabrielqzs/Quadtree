@@ -22,9 +22,9 @@ O Quadtree é o app do TCC do Vitor e do Sidney (Técnico em Desenvolvimento de 
 ### Estado atual (atualize sempre que algo mudar)
 
 - **Última atualização:** 22/11/2026.
-- **Etapa em andamento:** Etapa 1 (Preparação).
-- **Feito:** Vitor instalou o Visual Studio 2026; capítulo 1 do TCC escrito; requisitos levantados; roadmap pronto no Notion; repositório clonado na branch `main`; .NET 10 conferido; pasta Inicializacaodogit apagada; .gitignore revisado (tcc/ fora do git).
-- **Repositório hoje:** `.gitignore`, este `CLAUDE.md` e a pasta `fontes/` (Inter Tight e Nunito Sans, as fontes do app). **Nenhuma linha do app foi escrita ainda.**
+- **Etapa em andamento:** Etapa 1 (Preparação). **Todas as tarefas do Vitor da Etapa 1 estão feitas;** a etapa só fecha quando o Sidney terminar as dele (Visual Studio, .NET, Git, clonar, branch, commit de teste e pull request). O Vitor já pode seguir para a Etapa 2 (estudos).
+- **Feito:** Vitor instalou o Visual Studio 2026; capítulo 1 do TCC escrito e revisado (quadro infinito); requisitos levantados; roadmap no Notion e na Base de dados de construção; repositório clonado; .NET 10 conferido; Git configurado; pasta Inicializacaodogit apagada; .gitignore revisado (tcc/ fora do git); fontes na pasta `fontes/`; primeira branch criada, enviada, juntada na `main` por pull request e apagada; `main` protegida no GitHub (pull request obrigatório, 0 aprovações); página "Branches e seus conceitos" no Notion.
+- **Repositório hoje:** `.gitignore`, este `CLAUDE.md` (já na `main`), a pasta `fontes/` (Inter Tight e Nunito Sans) e a `main` protegida. **Nenhuma linha do app foi escrita ainda.**
 
 ---
 
@@ -114,15 +114,17 @@ O Quadtree é o app do TCC do Vitor e do Sidney (Técnico em Desenvolvimento de 
 
 - **C# + .NET 10 + WPF**, padrão **MVVM** com o pacote **CommunityToolkit.Mvvm**.
 - Salvamento em **JSON** (`System.Text.Json`); notas em arquivos **`.md`**.
-- **Windows 11**, **Visual Studio 2026** (os dois membros).
+- **Windows 11**, **Visual Studio 2026** (os dois membros). **O VS Code NÃO é usado** neste projeto: o código é escrito no Visual Studio 2026. Nas explicações, nunca mande abrir o VS Code nem use o terminal dele.
 - Target framework: **`net10.0-windows10.0.19041.0`** (não o `net10.0-windows` simples: a prévia de PDF usa `Windows.Data.Pdf`, que exige essa versão).
 - Executável final (um só `.exe`):
   `dotnet publish Quadtree -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true`
 
 ### 2.2 Repositório e Git
 
+- **Tudo o que for Git é feito pelo Git Bash** (instalado junto com o Git para Windows): clonar, `pull`, `switch`, `add`, `commit`, `push`, etc. Ao explicar qualquer comando de Git, escreva-o para o Git Bash e diga para abri-lo dentro da pasta do repositório (botão direito na pasta → "Open Git Bash here"). Não use o terminal do VS Code, o do Visual Studio nem as telas de Git do Visual Studio. Prefira `git add nome-do-arquivo` a `git add .`.
+
 - GitHub: https://github.com/Vitorgabrielqzs/Quadtree (branch principal **`main`**).
-- **Ninguém programa direto na `main`.** Cada um trabalha na própria branch e junta pela **pull request**, que o outro revisa. Regras e comandos: página **"regras do github"** no Notion.
+- **Ninguém programa direto na `main`.** Cada um trabalha na própria branch e junta pela **pull request**. **Não há revisão obrigatória:** a `main` exige só o pull request (0 aprovações) e cada um faz o merge do próprio PR; Vitor e Sidney combinam o que fizeram por aplicativo de conversa e avisam quando juntarem algo na `main`, para o outro dar `git pull`. Regras e comandos: página **"regras do github"** no Notion.
 - Rotina: `pull` antes de começar → programar → commit pequeno com mensagem clara → `push` → pull request → merge.
 - `.gitignore`: `tcc/`, `bin/`, `obj/`, `.vs/`. Acrescentar `*.user`, `publish/`, `*.exe` e `Executavel/` quando o projeto existir.
 
@@ -571,7 +573,7 @@ Ordem do mais simples (fazer o código rodar) até o polimento. Cada etapa tem a
 - [ ] Instalar o Visual Studio 2026 com a carga de desktop .NET (Sidney)
 - [x] Conferir o .NET 10 instalado (Vitor)
 - [ ] Conferir o .NET 10 instalado (Sidney)
-- [ ] Instalar e configurar o Git (Vitor)
+- [x] Instalar e configurar o Git (Vitor)
 - [ ] Instalar e configurar o Git (Sidney)
 - [ ] Clonar o repositório Quadtree (Sidney)
 - [x] Baixar as fontes Inter Tight e Nunito Sans (Vitor) — estão na pasta `fontes/` do repositório (Sidney pode usar)
@@ -580,19 +582,19 @@ Ordem do mais simples (fazer o código rodar) até o polimento. Cada etapa tem a
 - [x] Apagar a pasta Inicializacaodogit (Vitor)
 - [x] Revisar o .gitignore (Vitor)
 - [x] Decidir o nome da branch principal (Vitor) — é a `main`
-- [ ] Criar a branch do Vitor (Vitor)
+- [x] Criar a branch do Vitor (Vitor)
 - [ ] Criar a branch do Sidney (Sidney)
-- [ ] Combinar a rotina de pull, commit e pull request (Vitor)
-- [ ] Proteger a branch principal no GitHub (Vitor)
-- [ ] Fazer um commit de teste e um pull request (Vitor)
+- [x] Combinar a rotina de pull, commit e pull request (Vitor)
+- [x] Proteger a branch principal no GitHub (Vitor)
+- [x] Fazer um commit de teste e um pull request (Vitor)
 - [ ] Fazer um commit de teste e um pull request (Sidney)
-- [ ] Enviar este CLAUDE.md para o GitHub (Vitor)
+- [x] Enviar este CLAUDE.md para o GitHub (Vitor)
 
 *Decisões*
-- [ ] Passar este roadmap para a Base de dados de construção (Vitor)
+- [x] Passar este roadmap para a Base de dados de construção (Vitor)
 
 *TCC*
-- [ ] Revisar o capítulo 1: trocar "tamanho definido" por quadro infinito (Vitor)
+- [x] Revisar o capítulo 1: trocar "tamanho definido" por quadro infinito (Vitor)
 
 **O que precisa saber:** `dotnet --version`; `git config`, `clone`, `switch -c`, `add`, `commit`, `push`, `pull`, pull request e conflito (página "regras do github"). Proteger a branch: GitHub → Settings → Branches → regra para `main` exigindo pull request.
 
@@ -1256,12 +1258,15 @@ Ao guiar os estudos: diga o que estudar, para que serve no Quadtree e o que faze
 | 22/11/2026 | Fontes do app: **Inter Tight** (interface) e **Nunito Sans** (conteúdo do quadro), no lugar de Inter e Nunito. Pasta `fontes/` no GitHub. |
 | 22/11/2026 | O Claude só atualiza o `CLAUDE.md` (tarefas, estado, decisões) quando o Vitor disser "salvar" ou "finalizar a sessão", e então lembra de mandar para o GitHub. |
 | 22/11/2026 | Em cada tarefa, bloco ou etapa, o Claude cria um doc no Claude Docs com a lista de tarefas para o Vitor riscar e a contextualização embaixo (seção 1.7); no "salvar", o Claude lê o doc para atualizar as caixinhas. |
+| 22/11/2026 | O VS Code não é usado no projeto (só o Visual Studio 2026). Tudo o que for Git é feito pelo Git Bash. |
+| 22/11/2026 | Pull request: a `main` exige só o pull request, com 0 aprovações; cada um faz o merge do próprio PR. A conversa entre Vitor e Sidney por aplicativo de mensagem faz o papel de revisão. A `main` foi protegida no GitHub (ruleset ativo, lista de exceção vazia). |
+| 22/11/2026 | Página "Branches e seus conceitos" criada no Notion, dentro de "regras do github"; `git add` nomeia o arquivo em vez de `git add .`. |
 
 ---
 
 ## 11. Pendências e perguntas em aberto
 
 - [ ] Nomes no código: português ou inglês (decidir na Etapa 4).
-- [ ] Nome das branches: `vitor`/`sidney` ou uma por tarefa, como `feat/minha-tarefa` (página "regras do github").
+- [ ] Nome das branches: `vitor`/`sidney` ou uma por tarefa, como `feat/minha-tarefa` (página "regras do github"). O Vitor usou `vet1` na primeira vez (apagada depois do merge); a regra ainda não foi decidida.
 - [ ] Extensão do arquivo do quadro e nome da pasta do cofre (Etapa 3).
-- [ ] Onde está a pasta `tcc/` (não está mais na pasta do repositório depois do clone de 22/11/2026).
+- [x] Onde está a pasta `tcc/`: está em `Desktop\quadtree\tcc`, dentro da pasta do repositório e fora do git (`.gitignore`).
