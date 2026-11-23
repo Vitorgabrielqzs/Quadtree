@@ -622,10 +622,11 @@ O Vitor cria o esqueleto do projeto hoje (23/11) e manda para a `main`; a partir
 
 *Sidney*
 - [ ] Terminar a Etapa 1 (Visual Studio, .NET, Git, clonar, branch) (Sidney) — **até terça de manhã**
+- [ ] **Mini-app do Sidney** (projeto de teste separado, fora do repositório, como o do Vitor): uma janela com **fundo pontilhado** (`DrawingBrush` em `TileMode="Tile"`) e um botão **"Criar nota"** que põe, num `Canvas`, um cartão (`Border` de cantos arredondados com um `TextBlock` em Nunito Sans) numa posição aleatória; cada clique cria mais um cartão (Sidney) — **até terça, 14 h**
 - [ ] Criar o `Themes/Light.xaml` com as cores e embutir as fontes Inter Tight e Nunito Sans (Etapa 4) (Sidney)
 - [ ] Visual da nota e do bloco, como `DataTemplate` ou controle próprio, com as medidas das seções 5.3 e 5.8 (Etapa 5) (Sidney)
 - [ ] Botões e comandos "Criar nota" e "Criar bloco" (Etapa 5) (Sidney)
-- [ ] Fundo Pontilhado sem câmera: `DrawingBrush` em `TileMode="Tile"`, superfície `#FBFBF8`, pontos `#C2C2B8` de raio 1,3 a cada 26 px (seção 5.7) (Sidney)
+- [ ] Fundo Pontilhado sem câmera, no projeto real: superfície `#FBFBF8`, pontos `#C2C2B8` de raio 1,3 a cada 26 px (seção 5.7) (Sidney)
 - [ ] Publicar o `.exe` único (comando da seção 2.1) e testar num PC sem o projeto (Sidney)
 
 *Os dois*
@@ -641,7 +642,7 @@ O Vitor cria o esqueleto do projeto hoje (23/11) e manda para a `main`; a partir
 | Dia | Foco | Pronto quando |
 |---|---|---|
 | Seg 23/11 (noite) | Mini-app + Etapa 4 | F5 abre a janela com um texto por binding, em Inter Tight |
-| Ter 24/11 | Vitor: base dos itens e arraste. Sidney: tema, fontes, visual da nota e do bloco, botões, fundo Pontilhado, primeira publicação do `.exe` (prazo 22 h) | Cria e arrasta nota e bloco sobre o fundo pontilhado; o `.exe` abre |
+| Ter 24/11 | Vitor: base dos itens e arraste. Sidney: mini-app (até 14 h), depois tema, fontes, visual da nota e do bloco, botões, fundo Pontilhado e primeira publicação do `.exe` (prazo 22 h) | Cria e arrasta nota e bloco sobre o fundo pontilhado; o `.exe` abre |
 | Qua 25/11 | Vitor junta tudo e assume o que ficou pendente; ajuste final do visual; nova publicação e teste no computador da apresentação | Igual à especificação; prints e vídeo de reserva gravados |
 | Qui 26/11 | Teste e ensaio, **sem código novo** | Apresentação ensaiada |
 
@@ -679,7 +680,7 @@ O Vitor cria o esqueleto do projeto hoje (23/11) e manda para a `main`; a partir
 - [ ] Estudar Styles, Triggers e ResourceDictionary (Sidney)
 - [ ] Estudar System.Text.Json e leitura/escrita de arquivos (Sidney)
 - [ ] Mini-app: arrastar um retângulo num Canvas (Vitor) — em andamento (passo 8 a refazer)
-- [ ] Mini-app: botão que adiciona itens e salva em JSON (Sidney)
+- [ ] Mini-app: botão que adiciona itens e salva em JSON (Sidney) — fica para depois da demo; antes dela, o mini-app do marco (fundo pontilhado + "Criar nota")
 
 *TCC — Capítulo 2 (escrever enquanto estuda)*
 - [ ] Seção: mapa mental (Vitor)
@@ -1317,7 +1318,7 @@ Ao guiar os estudos: diga o que estudar, para que serve no Quadtree e o que faze
 | 22/11/2026 | O VS Code não é usado no projeto (só o Visual Studio 2026). Tudo o que for Git é feito pelo Git Bash. |
 | 22/11/2026 | Pull request: a `main` exige só o pull request, com 0 aprovações; cada um faz o merge do próprio PR. A conversa entre Vitor e Sidney por aplicativo de mensagem faz o papel de revisão. A `main` foi protegida no GitHub (ruleset ativo, lista de exceção vazia). |
 | 22/11/2026 | Página "Branches e seus conceitos" criada no Notion, dentro de "regras do github"; `git add` nomeia o arquivo em vez de `git add .`. |
-| 23/11/2026 | Marco: demonstração em 26/11/2026 com nota e bloco, quadro Pontilhado, design simples e `.exe`; a Etapa 3 fica para depois. O Vitor escreve o código à mão. Tarefas do marco divididas entre Vitor e Sidney; prazo do Sidney na terça, 24/11, às 22 h, e o que ficar pendente passa para o Vitor. |
+| 23/11/2026 | Marco: demonstração em 26/11/2026 com nota e bloco, quadro Pontilhado, design simples e `.exe`; a Etapa 3 fica para depois. O Vitor escreve o código à mão. Tarefas do marco divididas entre Vitor e Sidney; prazo do Sidney na terça, 24/11, às 22 h (mini-app dele até as 14 h), e o que ficar pendente passa para o Vitor. |
 
 ---
 
