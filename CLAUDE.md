@@ -21,8 +21,10 @@ O Quadtree é o app do TCC do Vitor e do Sidney (Técnico em Desenvolvimento de 
 
 ### Estado atual (atualize sempre que algo mudar)
 
-- **Última atualização:** 22/11/2026.
-- **Etapa em andamento:** Etapa 1 (Preparação). **Todas as tarefas do Vitor da Etapa 1 estão feitas;** a etapa só fecha quando o Sidney terminar as dele (Visual Studio, .NET, Git, clonar, branch, commit de teste e pull request). O Vitor já pode seguir para a Etapa 2 (estudos).
+- **Última atualização:** 23/11/2026.
+- **Etapa em andamento:** Etapa 1 (Preparação) segue aberta só por causa do Sidney (Visual Studio, .NET, Git, clonar, branch, commit de teste e pull request). **O Vitor já está na Etapa 2 (estudos), fazendo o mini-app "arrastar um retângulo num Canvas"** (tarefa "em andamento" no Notion).
+- **Onde parou o mini-app (23/11/2026):** passos 1 a 7 feitos (projeto `WPF_teste`, `Canvas` `quadro`, `Rectangle` `retangulo` e os três atributos de evento `ret_MouseLeftButtonDown`, `ret_MouseMove` e `ret_MouseLeftButtonUp` no XAML). **O passo 8 (criar os três métodos vazios no `MainWindow.xaml.cs`) NÃO foi terminado e deve ser refeito do começo:** primeiro o conceito de método (o Vitor disse que não conhece; a explicação já foi dada e ele ainda não confirmou que entendeu), depois o passo. Em seguida: passo 9 (campos `arrastando` e `ultPos`) e o corpo dos métodos (`CaptureMouse`, `GetPosition`, `Canvas.Left/Top`, `ReleaseMouseCapture`). Nenhuma caixinha da Etapa 2 foi concluída ainda.
+- **Marco atual:** demonstração de quinta-feira, 26/11/2026 (ver "Marco: demonstração de 26/11" na seção 7). As tarefas do marco estão divididas entre os dois, com prazo para o Sidney; o que ele não entregar no prazo passa para o Vitor.
 - **Feito:** Vitor instalou o Visual Studio 2026; capítulo 1 do TCC escrito e revisado (quadro infinito); requisitos levantados; roadmap no Notion e na Base de dados de construção; repositório clonado; .NET 10 conferido; Git configurado; pasta Inicializacaodogit apagada; .gitignore revisado (tcc/ fora do git); fontes na pasta `fontes/`; primeira branch criada, enviada, juntada na `main` por pull request e apagada; `main` protegida no GitHub (pull request obrigatório, 0 aprovações); página "Branches e seus conceitos" no Notion.
 - **Repositório hoje:** `.gitignore`, este `CLAUDE.md` (já na `main`), a pasta `fontes/` (Inter Tight e Nunito Sans) e a `main` protegida. **Nenhuma linha do app foi escrita ainda.**
 
@@ -602,6 +604,60 @@ Ordem do mais simples (fazer o código rodar) até o polimento. Cada etapa tem a
 
 ---
 
+### Marco: demonstração de 26/11/2026 (quinta-feira)
+
+Uma breve apresentação com o app rodando: **dois elementos (nota e bloco), um quadro só (o modelo Pontilhado), design simples e o `.exe` único funcionando**. O marco adianta tarefas das Etapas 4, 5, 7 (só o fundo) e 14 (só a publicação); a Etapa 3 (modelagem) fica para depois dele. O Vitor escreve o código à mão; o Claude guia e, a cada passo, pede que ele explique de volta (o professor aceita IA, mas exige que se explique tudo).
+
+**Divisão das tarefas do marco**
+
+O Vitor cria o esqueleto do projeto hoje (23/11) e manda para a `main`; a partir daí, os dois trabalham em paralelo, cada um na própria branch. **Prazo do Sidney: terça, 24/11, às 22 h.** O que não estiver na `main` até lá passa para o Vitor, para não segurar a demo.
+
+*Vitor*
+- [ ] Terminar o mini-app do retângulo (Etapa 2) (Vitor)
+- [ ] Criar o projeto WPF, a solução, as pastas, o CommunityToolkit.Mvvm e o MainViewModel, e mandar para a `main` (Etapa 4) (Vitor) — **até hoje à noite**, porque o Sidney depende disso
+- [ ] Base dos itens: `BoardItem`/`Board`, `BoardItemViewModel`, lista no `MainViewModel`, itens no Canvas (Etapa 5) (Vitor)
+- [ ] Arrastar item e trazer para a frente (Etapa 5) (Vitor)
+- [ ] Juntar o visual do Sidney na base e testar tudo junto (Vitor)
+- [ ] Se sobrar tempo: selecionar e tirar a seleção (Vitor)
+
+*Sidney*
+- [ ] Terminar a Etapa 1 (Visual Studio, .NET, Git, clonar, branch) (Sidney) — **até terça de manhã**
+- [ ] Criar o `Themes/Light.xaml` com as cores e embutir as fontes Inter Tight e Nunito Sans (Etapa 4) (Sidney)
+- [ ] Visual da nota e do bloco, como `DataTemplate` ou controle próprio, com as medidas das seções 5.3 e 5.8 (Etapa 5) (Sidney)
+- [ ] Botões e comandos "Criar nota" e "Criar bloco" (Etapa 5) (Sidney)
+- [ ] Fundo Pontilhado sem câmera: `DrawingBrush` em `TileMode="Tile"`, superfície `#FBFBF8`, pontos `#C2C2B8` de raio 1,3 a cada 26 px (seção 5.7) (Sidney)
+- [ ] Publicar o `.exe` único (comando da seção 2.1) e testar num PC sem o projeto (Sidney)
+
+*Os dois*
+- [ ] Ensaiar a apresentação da demo (Vitor)
+- [ ] Ensaiar a apresentação da demo (Sidney)
+
+**Como os dois se juntam:** o Sidney faz o visual da nota e do bloco num arquivo próprio (por exemplo, `Views/NoteView.xaml` e `Views/BlockView.xaml`), ligado às mesmas propriedades do `BoardItemViewModel` (`Titulo`, `Texto`, `Cor`). Assim ele não mexe nos arquivos do Vitor e o merge não dá conflito. **Os nomes das propriedades são combinados antes**, por mensagem.
+
+**Fica de fora:** salvar, câmera, menus, bandeja, título grande, outros modelos de quadro, tema escuro, vidro e animações.
+
+**Plano por dia (8 h por dia):**
+
+| Dia | Foco | Pronto quando |
+|---|---|---|
+| Seg 23/11 (noite) | Mini-app + Etapa 4 | F5 abre a janela com um texto por binding, em Inter Tight |
+| Ter 24/11 | Vitor: base dos itens e arraste. Sidney: tema, fontes, visual da nota e do bloco, botões, fundo Pontilhado, primeira publicação do `.exe` (prazo 22 h) | Cria e arrasta nota e bloco sobre o fundo pontilhado; o `.exe` abre |
+| Qua 25/11 | Vitor junta tudo e assume o que ficou pendente; ajuste final do visual; nova publicação e teste no computador da apresentação | Igual à especificação; prints e vídeo de reserva gravados |
+| Qui 26/11 | Teste e ensaio, **sem código novo** | Apresentação ensaiada |
+
+**Cuidados da demo:**
+- Um `.exe` sem assinatura copiado de pendrive pode mostrar "O Windows protegeu seu computador": clicar em *Mais informações → Executar assim mesmo*. Testar no computador da apresentação antes de quinta.
+- Levar o vídeo gravado e o projeto aberto no notebook como reserva.
+- Caderno de explicação: 3 linhas por arquivo (o que é, para que serve, por que foi feito assim), para o ensaio e para o capítulo 3.4 do TCC.
+
+**Plano B:** se o binding no `Canvas` não funcionar até a noite de terça, criar os itens direto no código da janela (sem binding) só para a demo e refazer em MVVM depois.
+
+- [ ] Testar o `.exe` no computador da apresentação (Vitor)
+- [ ] Gravar o vídeo e os prints de reserva da demo (Vitor)
+- [ ] Apresentar a demo (26/11) (Vitor)
+
+---
+
 ### Etapa 2 — Estudos e fundamentação
 
 **Tarefas**
@@ -622,7 +678,7 @@ Ordem do mais simples (fazer o código rodar) até o polimento. Cada etapa tem a
 - [ ] Estudar eventos de teclado e InputBindings (Sidney)
 - [ ] Estudar Styles, Triggers e ResourceDictionary (Sidney)
 - [ ] Estudar System.Text.Json e leitura/escrita de arquivos (Sidney)
-- [ ] Mini-app: arrastar um retângulo num Canvas (Vitor)
+- [ ] Mini-app: arrastar um retângulo num Canvas (Vitor) — em andamento (passo 8 a refazer)
 - [ ] Mini-app: botão que adiciona itens e salva em JSON (Sidney)
 
 *TCC — Capítulo 2 (escrever enquanto estuda)*
@@ -1261,6 +1317,7 @@ Ao guiar os estudos: diga o que estudar, para que serve no Quadtree e o que faze
 | 22/11/2026 | O VS Code não é usado no projeto (só o Visual Studio 2026). Tudo o que for Git é feito pelo Git Bash. |
 | 22/11/2026 | Pull request: a `main` exige só o pull request, com 0 aprovações; cada um faz o merge do próprio PR. A conversa entre Vitor e Sidney por aplicativo de mensagem faz o papel de revisão. A `main` foi protegida no GitHub (ruleset ativo, lista de exceção vazia). |
 | 22/11/2026 | Página "Branches e seus conceitos" criada no Notion, dentro de "regras do github"; `git add` nomeia o arquivo em vez de `git add .`. |
+| 23/11/2026 | Marco: demonstração em 26/11/2026 com nota e bloco, quadro Pontilhado, design simples e `.exe`; a Etapa 3 fica para depois. O Vitor escreve o código à mão. Tarefas do marco divididas entre Vitor e Sidney; prazo do Sidney na terça, 24/11, às 22 h, e o que ficar pendente passa para o Vitor. |
 
 ---
 
